@@ -1,11 +1,10 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "mini/rails/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "mini-rails"
-  spec.version       = Mini::Rails::VERSION
+  spec.version       = "0.0.1"
   spec.authors       = ["Nate Dalo"]
   spec.email         = ["ndalo@merchantsbonding.com"]
 
@@ -38,4 +37,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "sqlite3"
 end
