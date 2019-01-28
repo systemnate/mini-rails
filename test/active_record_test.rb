@@ -36,4 +36,11 @@ class ActiveRecordTest < Minitest::Test
     assert_equal 1, post.id
     assert_equal "Blueberry Muffins", post.title
   end
+
+  def test_where
+    relation = Post.where("id = 2").where("title IS NOT NULL")
+    assert_equal "SELECT * FROM posts WHERE id = 2 AND title IS NOT NULL", relation.to_sql
+    post = relation.first
+    assert_equal 2, post.id
+  end
 end
